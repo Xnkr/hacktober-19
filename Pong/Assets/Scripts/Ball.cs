@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
+    public GameManager gameManager;
     Vector3 velocity;
     [Range(0,1)]
     public float speed = 0.1f;
@@ -37,6 +38,7 @@ public class Ball : MonoBehaviour
                 break;
             case "Bound North":
             case "Bound South":
+                gameManager.IncScore(collision.transform.name);
                 ResetPosition();
                 break;
             case "Player Paddle":
