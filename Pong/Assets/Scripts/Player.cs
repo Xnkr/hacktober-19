@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+            Application.Quit(); 
         if(Input.touchCount != 1){
             return;
         }
